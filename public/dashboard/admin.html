@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Result Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Dashboard</h3>
+                <div class="user-info" id="adminInfo"></div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" data-section="dashboard" class="active">Dashboard</a>
+                <a href="#" data-section="teachers">Manage Teachers</a>
+                <a href="#" data-section="students">Manage Students</a>
+                <a href="#" data-section="marks">View All Marks</a>
+                <a href="#" data-section="improvement">Improvement List</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h2 id="pageTitle">Dashboard</h2>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+
+            <!-- Dashboard Section -->
+            <div id="dashboard" class="content-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Teachers</h3>
+                        <div class="value" id="totalTeachers">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Students</h3>
+                        <div class="value" id="totalStudents">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Subjects</h3>
+                        <div class="value" id="totalSubjects">6</div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button onclick="showSection('teachers')" class="btn-action">Add Teacher</button>
+                        <button onclick="showSection('students')" class="btn-action">Add Student</button>
+                        <button onclick="showSection('marks')" class="btn-action">View Marks</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teachers Section -->
+            <div id="teachers" class="content-section" style="display: none;">
+                <div class="add-form">
+                    <h3>Add New Teacher</h3>
+                    <form id="teacherForm">
+                        <div class="form-row">
+                            <input type="text" id="teacherName" placeholder="Teacher Name" required>
+                            <input type="email" id="teacherEmail" placeholder="Email" required>
+                            <input type="password" id="teacherPassword" placeholder="Password" required>
+                        </div>
+                        <div class="form-row">
+                            <select id="teacherSubject" required>
+                                <option value="">Loading subjects...</option>
+                            </select>
+                            <button type="submit" class="btn-submit">Add Teacher</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="table-container">
+                    <h3>All Teachers</h3>
+                    <table id="teachersTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Teacher ID</th>
+                                <th>Assigned Subject</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Students Section -->
+            <div id="students" class="content-section" style="display: none;">
+                <div class="add-form">
+                    <h3>Add New Student</h3>
+                    <form id="studentForm">
+                        <div class="form-row">
+                            <input type="text" id="studentName" placeholder="Student Name" required>
+                            <input type="email" id="studentEmail" placeholder="Email" required>
+                            <input type="password" id="studentPassword" placeholder="Password" required>
+                        </div>
+                        <div class="form-row">
+                            <button type="submit" class="btn-submit">Add Student</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="table-container">
+                    <h3>All Students</h3>
+                    <table id="studentsTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Student ID</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Marks Section -->
+            <div id="marks" class="content-section" style="display: none;">
+                <div class="table-container">
+                    <h3>All Student Marks</h3>
+                    <table id="marksTable">
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Subject</th>
+                                <th>Internal</th>
+                                <th>External</th>
+                                <th>Total</th>
+                                <th>Entered By</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Improvement List Section -->
+            <div id="improvement" class="content-section" style="display: none;">
+                <h3>Students Needing Improvement</h3>
+                <div class="improvement-container" id="improvementList"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+</html>

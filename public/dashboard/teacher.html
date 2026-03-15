@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - Result Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Teacher Dashboard</h3>
+                <div class="user-info">
+                    <span id="teacherName"></span><br>
+                    <small>Assigned: <span id="assignedSubject">-</span></small>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" data-section="marks-entry" class="active">Marks Entry</a>
+                <a href="#" data-section="students">My Students</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h2>Marks Entry</h2>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+
+            <div id="marks-entry" class="content-section">
+                <div class="students-grid" id="studentsList"></div>
+            </div>
+
+            <div id="students" class="content-section" style="display: none;">
+                <div class="students-grid" id="allStudentsList"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Marks Entry Modal -->
+    <div id="marksModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Enter Marks for <span id="modalStudentName"></span></h3>
+            <form id="marksForm">
+                <input type="hidden" id="modalStudentId">
+                
+                <div class="form-group">
+                    <label for="internalMarks">Internal Marks (Max 50)</label>
+                    <input type="number" id="internalMarks" min="0" max="50" step="0.5" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="externalMarks">External Marks (Max 50)</label>
+                    <input type="number" id="externalMarks" min="0" max="50" step="0.5" required>
+                </div>
+                
+                <div class="form-group">
+                    <p class="total-preview">Total: <span id="totalPreview">0</span>/100</p>
+                </div>
+                
+                <button type="submit" class="btn-submit">Save Marks</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/teacher.js"></script>
+</body>
+</html>

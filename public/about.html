@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Result Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="about-page">
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">RMS</h1>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/about" class="active">About</a>
+                    <a href="/login" class="btn-login">Login</a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="about-main">
+            <div class="about-container">
+                <h1>About Result Management System</h1>
+                
+                <div class="about-section">
+                    <h2>System Overview</h2>
+                    <p>
+                        The Result Management System is a comprehensive platform designed to 
+                        streamline the process of managing student academic records. It provides 
+                        role-based access for administrators, teachers, and students, ensuring 
+                        secure and efficient result management.
+                    </p>
+                </div>
+
+                <div class="about-section">
+                    <h2>Key Features</h2>
+                    <ul class="feature-list">
+                        <li>🔐 Secure JWT-based authentication</li>
+                        <li>👥 Three user roles: Admin, Teacher, Student</li>
+                        <li>📝 Easy marks entry and management</li>
+                        <li>📊 Automatic result calculation</li>
+                        <li>🎯 Grade calculation based on percentage</li>
+                        <li>📈 Performance tracking and improvement list</li>
+                        <li>📱 Responsive design for all devices</li>
+                        <li>🛡️ Role-based access control</li>
+                    </ul>
+                </div>
+
+                <div class="about-section">
+                    <h2>How It Works</h2>
+                    <div class="how-it-works">
+                        <div class="step">
+                            <h3>1. Login</h3>
+                            <p>Users login with their credentials. Based on their role, they are redirected to their respective dashboard.</p>
+                        </div>
+                        <div class="step">
+                            <h3>2. Admin Dashboard</h3>
+                            <p>Admins can create teachers and students, assign subjects, and view all results.</p>
+                        </div>
+                        <div class="step">
+                            <h3>3. Teacher Dashboard</h3>
+                            <p>Teachers enter and update marks for their assigned subject only.</p>
+                        </div>
+                        <div class="step">
+                            <h3>4. Student Dashboard</h3>
+                            <p>Students can view their results, grades, and performance analysis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h2>Grading System</h2>
+                    <table class="grading-table">
+                        <tr>
+                            <th>Percentage</th>
+                            <th>Grade</th>
+                        </tr>
+                        <tr><td>90 - 100%</td><td>A+</td></tr>
+                        <tr><td>80 - 89%</td><td>A</td></tr>
+                        <tr><td>70 - 79%</td><td>B</td></tr>
+                        <tr><td>60 - 69%</td><td>C</td></tr>
+                        <tr><td>50 - 59%</td><td>D</td></tr>
+                        <tr><td>Below 50%</td><td>F</td></tr>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Result Management System. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

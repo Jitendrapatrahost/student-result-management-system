@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Result Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Student Dashboard</h3>
+                <div class="user-info">
+                    <span id="studentName"></span><br>
+                    <small>ID: <span id="studentId"></span></small>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" data-section="results" class="active">My Results</a>
+                <a href="#" data-section="performance">Performance Analysis</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h2>My Academic Results</h2>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" class="content-section">
+                <div class="summary-card" id="summaryStats">
+                    <div class="loading">Loading summary...</div>
+                </div>
+
+                <div class="table-container">
+                    <h3>Subject-wise Marks</h3>
+                    <table id="resultsTable">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Code</th>
+                                <th>Internal</th>
+                                <th>External</th>
+                                <th>Total</th>
+                                <th>Percentage</th>
+                                <th>Grade</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="8" class="loading">Loading results...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Performance Section -->
+            <div id="performance" class="content-section" style="display: none;">
+                <div class="chart-container">
+                    <h3>Performance Analysis</h3>
+                    <div style="height: 400px; position: relative;">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="legend-info">
+                    <h4>Performance Summary</h4>
+                    <ul class="performance-legend">
+                        <li><span class="legend-color" style="background: rgba(37, 99, 235, 0.7);"></span> Internal Marks (Max 50)</li>
+                        <li><span class="legend-color" style="background: rgba(16, 185, 129, 0.7);"></span> External Marks (Max 50)</li>
+                        <li><span class="legend-color" style="background: rgba(245, 158, 11, 0.7);"></span> Total Marks (Max 100)</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="loadingIndicator" class="loading" style="display: none;">Loading...</div>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/student.js"></script>
+</body>
+</html>
